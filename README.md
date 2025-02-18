@@ -11,8 +11,8 @@ This project is a PHP application that handles configuration and image resizing.
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-repo/project-name.git
-    cd project-name
+    git clone https://github.com/axelbad/TestMeta.git
+    cd testMeta
     ```
 
 2. Build and start the Docker containers:
@@ -45,24 +45,6 @@ The project uses PHPUnit for testing. The tests are located in the [tests] direc
 
 2. Execute the tests inside the Docker container:
     ```sh
-    docker-compose exec php-fpm vendor/bin/phpunit --configuration phpunit.xml
+    docker exec -it testmeta-app-1 bash
+    ./vendor/bin/phpunit tests/HandleConfigTest.php 
     ```
-
-## Docker
-
-The project includes a Docker setup for running the application in a containerized environment.
-
-### Dockerfile
-
-The Dockerfile is located at [Dockerfile]. It sets up a PHP environment with the necessary extensions and dependencies.
-
-### Docker Compose
-
-The [docker-compose.yml] file defines the services for the application. It includes the following services:
-
-- `php-fpm`: The PHP application server.
-- `web`: The web server.
-
-To start the services, run:
-```sh
-docker-compose up --build
