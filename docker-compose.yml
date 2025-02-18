@@ -1,0 +1,17 @@
+  services:
+    app:
+      build:
+        context: .
+        dockerfile: container-build/php-fpm/Dockerfile
+      ports:
+        - "80:80" # Mappa la porta 80 del container alla porta 80 dell'host
+      volumes:
+        - ./:/var/www/html # Monta la directory corrente nel container per sviluppo (opzionale)
+      # depends_on:
+      #   - composer # Assicura che il container composer sia pronto prima di avviare l'app
+    # composer:
+    #     image: composer:latest # Usa l'immagine ufficiale di Composer
+    #     volumes:
+    #       - ./vendor:/var/www/html/vendor # Monta la cartella vendor per evitare di reinstallare le dipendenze ad ogni build
+    #       - ./:/var/www/html # Monta il codice dell'app per permettere a Composer di installare le dipendenze
+    #     command: install --no-dev --optimize-autoloader # Installa le dipendenze (opzionale, se già fatto nel Dockerfile)

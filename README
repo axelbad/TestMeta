@@ -1,0 +1,68 @@
+# Image Resizer Application
+
+This project is a PHP application that handles configuration and image resizing. It uses Docker for containerization and PHPUnit for testing.
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+
+### Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-repo/project-name.git
+    cd project-name
+    ```
+
+2. Build and start the Docker containers:
+    ```sh
+    docker-compose up --build
+    ```
+
+3. Access the application in your browser at `http://localhost`.
+
+### Usage
+
+The main entry point of the application is [index.php](http://_vscodecontentref_/4). It initializes the configuration and resizes an image.
+
+### Configuration
+
+The configuration is handled by the `handleConfig` class, which loads values from an XML file. The XML configuration file is located at [myConfig.xml](http://_vscodecontentref_/5).
+
+### Image Resizing
+
+The `imageResize` class is used to resize images. It takes the configuration as a parameter and resizes the specified image.
+
+## Running Tests
+
+The project uses PHPUnit for testing. The tests are located in the [tests](http://_vscodecontentref_/6) directory.
+
+1. To run the tests, first, ensure the Docker containers are running:
+    ```sh
+    docker-compose up -d
+    ```
+
+2. Execute the tests inside the Docker container:
+    ```sh
+    docker-compose exec php-fpm vendor/bin/phpunit --configuration phpunit.xml
+    ```
+
+## Docker
+
+The project includes a Docker setup for running the application in a containerized environment.
+
+### Dockerfile
+
+The Dockerfile is located at [Dockerfile](http://_vscodecontentref_/7). It sets up a PHP environment with the necessary extensions and dependencies.
+
+### Docker Compose
+
+The [docker-compose.yml](http://_vscodecontentref_/8) file defines the services for the application. It includes the following services:
+
+- `php-fpm`: The PHP application server.
+- `web`: The web server.
+
+To start the services, run:
+```sh
+docker-compose up --build
