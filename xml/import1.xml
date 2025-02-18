@@ -2,7 +2,7 @@
 <glz:Config xmlns:glz="http://www.glizy.org/dtd/1.0/">
     <glz:Param name="archive" value="archive/" />
     <glz:Param name="imageCache" value="cache/" />
-    <glz:Param name="mode" value="GDLIB" />
+    <glz:Param name="mode" value="ImageMagick" />
     <glz:Param name="jpg_compression" value="90" />
 
     <glz:Group name="thumbnail">

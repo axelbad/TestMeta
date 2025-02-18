@@ -1,7 +1,7 @@
 <?php return array (
   'archive' => 'archive/',
   'imageCache' => 'cache/',
-  'mode' => 'GDLIB',
+  'mode' => 'ImageMagick',
   'jpg_compression' => 90,
   'thumbnail/width' => 400,
   'thumbnail/height' => 400,
@@ -16,7 +16,7 @@
   'medium/crop' => true,
   'full/width' => 800,
   'full/height' => 600,
-  'full/crop' => true,
+  'full/crop' => false,
   'arrayvalue' => 
   array (
     0 => 'abc',

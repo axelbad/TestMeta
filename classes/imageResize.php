@@ -191,16 +191,38 @@ class imageResize
      * @return void
      */
     private function saveImage($image, $cacheFile, $imageType) {
-        switch ($imageType) {
-            case IMAGETYPE_JPEG:
-                imagejpeg($image, $cacheFile, 90);
-                break;
-            case IMAGETYPE_PNG:
-                imagepng($image, $cacheFile);
-                break;
-            case IMAGETYPE_GIF:
-                imagegif($image, $cacheFile);
-                break;
+        if ($this->mode === 'GDLIB') {
+            switch ($imageType) {
+                case IMAGETYPE_JPEG:
+                    imagejpeg($image, $cacheFile, 90);
+                    break;
+                case IMAGETYPE_PNG:
+                    imagepng($image, $cacheFile);
+                    break;
+                case IMAGETYPE_GIF:
+                    imagegif($image, $cacheFile);
+                    break;
+                default:
+                    throw new Exception("Unsupported image format");
+            }
+        } elseif ($this->mode === 'ImageMagick') {
+            switch ($imageType) {
+                case IMAGETYPE_JPEG:
+                    $image->setImageFormat('jpeg');
+                    $image->setImageCompressionQuality(90);
+                    break;
+                case IMAGETYPE_PNG:
+                    $image->setImageFormat('png');
+                    break;
+                case IMAGETYPE_GIF:
+                    $image->setImageFormat('gif');
+                    break;
+                default:
+                    throw new Exception("Unsupported image format");
+            }
+            $image->writeImage($cacheFile);
+        } else {
+            throw new Exception("Unsupported image processing mode: $this->mode");
         }
     }
 }
