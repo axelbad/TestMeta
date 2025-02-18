@@ -48,3 +48,9 @@ The project uses PHPUnit for testing. The tests are located in the [tests] direc
     docker exec -it testmeta-app-1 bash
     ./vendor/bin/phpunit tests/HandleConfigTest.php 
     ```
+
+## Vendor Directory
+The vendor directory has been included in the repository to ensure that the project can be run even if Docker and/or Composer are not available (just a LAMP for instance). This allows you to run the application without needing to install dependencies manually.
+
+PHP Version
+The project uses PHP version 8.2.
