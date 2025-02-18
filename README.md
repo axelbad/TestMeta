@@ -24,11 +24,11 @@ This project is a PHP application that handles configuration and image resizing.
 
 ### Usage
 
-The main entry point of the application is [index.php](http://_vscodecontentref_/4). It initializes the configuration and resizes an image.
+The main entry point of the application is [index.php]. It initializes the configuration and resizes an image.
 
 ### Configuration
 
-The configuration is handled by the `handleConfig` class, which loads values from an XML file. The XML configuration file is located at [myConfig.xml](http://_vscodecontentref_/5).
+The configuration is handled by the `handleConfig` class, which loads values from an XML file. The XML configuration file is located at [myConfig.xml].
 
 ### Image Resizing
 
@@ -36,7 +36,7 @@ The `imageResize` class is used to resize images. It takes the configuration as 
 
 ## Running Tests
 
-The project uses PHPUnit for testing. The tests are located in the [tests](http://_vscodecontentref_/6) directory.
+The project uses PHPUnit for testing. The tests are located in the [tests] directory.
 
 1. To run the tests, first, ensure the Docker containers are running:
     ```sh
@@ -54,11 +54,11 @@ The project includes a Docker setup for running the application in a containeriz
 
 ### Dockerfile
 
-The Dockerfile is located at [Dockerfile](http://_vscodecontentref_/7). It sets up a PHP environment with the necessary extensions and dependencies.
+The Dockerfile is located at [Dockerfile]. It sets up a PHP environment with the necessary extensions and dependencies.
 
 ### Docker Compose
 
-The [docker-compose.yml](http://_vscodecontentref_/8) file defines the services for the application. It includes the following services:
+The [docker-compose.yml] file defines the services for the application. It includes the following services:
 
 - `php-fpm`: The PHP application server.
 - `web`: The web server.
