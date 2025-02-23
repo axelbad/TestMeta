@@ -17,6 +17,10 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY . /var/www/html/
 
+RUN usermod -u 1000 www-data
+RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 755 /var/www/html
+
 COPY ./container-build/php-fpm/php.ini /etc/php/8.2/apache2/php.ini 
 
 WORKDIR /var/www/html
