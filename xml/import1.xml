@@ -8,7 +8,7 @@
     <glz:Group name="thumbnail">
         <glz:Param name="width" value="100" />
         <glz:Param name="height" value="*" />
-        <glz:Param name="crop" value="true" />
+        <glz:Param name="crop" value="false" />
         <glz:Param name="filters[]" value="FlipHorizontal" />
         <glz:Param name="filters[]" value="BlackAndWhite" />
     </glz:Group>

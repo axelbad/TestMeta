@@ -42,18 +42,22 @@ class imageResize
             throw new Exception("File not found: $filePath");
         }
 
-        $sizeConfig = $this->config->get($size."/width");
-        if (!$sizeConfig) {
-            throw new Exception("Size configuration not found: $size");
+        $sizeConfigW = $this->config->get($size."/width");
+        if (!$sizeConfigW) {
+            throw new Exception("Width size configuration not found: $size");
         }
 
-        $sizeName = explode('/', $sizeConfig);
-        $sizeName = $sizeName[0];
+        $sizeConfigH = $this->config->get($size."/height");
+        if (!$sizeConfigH) {
+            throw new Exception("Height size configuration not found: $size");
+        }
 
         $width = $this->config->get($size."/width");
         $height = $this->config->get($size."/height");
         $crop = $this->config->get($size."/crop") ?? false;
         $filters = $this->config->get($size."/filters") ?? [];
+
+        $sizeName = $sizeConfigW."_".$sizeConfigH."_".$crop;
 
         $cacheFile = $this->getCacheFilename($filename, $sizeName);
         if ($this->isCacheValid($filePath, $cacheFile)) {

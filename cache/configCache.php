@@ -4,8 +4,8 @@
   'mode' => 'ImageMagick',
   'jpg_compression' => 90,
   'thumbnail/width' => 400,
-  'thumbnail/height' => 400,
-  'thumbnail/crop' => true,
+  'thumbnail/height' => 100,
+  'thumbnail/crop' => false,
   'thumbnail/filters' => 
   array (
     0 => 'FlipHorizontal',
@@ -27,6 +27,7 @@
   'longtext' => '
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna laus. Cave putes quicquam esse verius. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant. Duo Reges: constructio interrete. </p>
     ',
-  'value1' => 'prova1',
-  'value2' => 'prova2',
+  'value1' => 'prova3',
+  'value2' => 'prova4',
+  'value3' => 'prova5',
 );
