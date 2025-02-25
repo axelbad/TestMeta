@@ -3,9 +3,9 @@
   'imageCache' => 'cache/',
   'mode' => 'ImageMagick',
   'jpg_compression' => 90,
-  'thumbnail/width' => 400,
-  'thumbnail/height' => 100,
-  'thumbnail/crop' => false,
+  'thumbnail/width' => 440,
+  'thumbnail/height' => 123,
+  'thumbnail/crop' => true,
   'thumbnail/filters' => 
   array (
     0 => 'FlipHorizontal',

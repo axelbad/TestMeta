@@ -3,8 +3,8 @@
     <glz:Import src="import1.xml" />
 
     <glz:Group name="thumbnail">
-        <glz:Param name="width" value="400" />
-        <glz:Param name="height" value="100" />
+        <glz:Param name="width" value="440" />
+        <glz:Param name="height" value="123" />
     </glz:Group>
 
     <glz:Param name="arrayvalue[]" value="abc" />
